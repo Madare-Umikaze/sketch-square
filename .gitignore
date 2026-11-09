@@ -1,0 +1,33 @@
+
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+.build/
+build/
+dist/
+coverage/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Generated Processing runtime binaries
+public/lib/processing-core*.jar
+public/lib/processing-awt-patch*.jar
+public/ProcessingWebLauncher*.jar
+
+# Generated sketch binaries
+public/works/*/*/*.jar
+public/*.jar

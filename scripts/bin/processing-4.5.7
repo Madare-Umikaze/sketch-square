@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Processing 4.5.7専用CLIラッパー。
+# 4.5.2側の /usr/local/bin/processing-java には触れません。
+PROCESSING_APP="${PROCESSING_457_APP:-$HOME/Applications/Processing-4.5.7/Processing.app}"
+PROCESSING_BIN="$PROCESSING_APP/Contents/MacOS/Processing"
+
+if [[ ! -x "$PROCESSING_BIN" ]]; then
+  echo "ERROR: Processing 4.5.7 executable was not found:" >&2
+  echo "  $PROCESSING_BIN" >&2
+  echo "Install Processing 4.5.7 at ~/Applications/Processing-4.5.7/Processing.app" >&2
+  echo "or set PROCESSING_457_APP to the actual .app path." >&2
+  exit 1
+fi
+
+exec "$PROCESSING_BIN" cli "$@"

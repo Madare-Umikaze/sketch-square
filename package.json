@@ -1,0 +1,10 @@
+{
+  "name": "processing-web-runtime-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PoC for running Processing 4 Java Mode JAVA2D sketches in the browser with CheerpJ 5",
+  "scripts": {
+    "build:demo": "bash scripts/build-sketch.sh",
+    "serve": "npx serve public --listen 4173"
+  }
+}
